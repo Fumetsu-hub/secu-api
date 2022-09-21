@@ -1,13 +1,11 @@
 package fr.levitt.secuapi;
 
-import fr.levitt.secuapi.core.Utilisateur;
-import fr.levitt.secuapi.sql.UtilisateurRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.List;
+import fr.levitt.secuapi.core.Utilisateur;
+import fr.levitt.secuapi.sql.UtilisateurRepository;
 
 @RestController
 public class IndexController {
