@@ -12,8 +12,8 @@ public class Utilisateur {
     private int idUtilisateur;
     private String nom;
     private String prenom;
-    private int age;
-    private int phone;
+    private Integer age;
+    private String phone;
     private String mail;
 
     public void setIdUtilisateur(int idUtilisateur) {
@@ -33,11 +33,11 @@ public class Utilisateur {
     }
 
    
-    public void setAge(int age){
+    public void setAge(Integer age){
         this.age = age;
     }
 
-    public void setPhone(int phone){
+    public void setPhone(String phone){
         this.phone = phone;
     }
 
@@ -54,7 +54,7 @@ public class Utilisateur {
         return prenom;
     }
 
-    public int getAge(){
+    public Integer getAge(){
         return age;
     }
 
@@ -62,7 +62,7 @@ public class Utilisateur {
         return mail;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
