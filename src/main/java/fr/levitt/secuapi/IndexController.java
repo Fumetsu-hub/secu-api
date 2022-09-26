@@ -17,6 +17,7 @@ public class IndexController {
     @Autowired
     private UtilisateurRepository utilisateurRepository;
 
+    
     @GetMapping("/secure")
     public ResponseEntity secure(@RequestHeader(value=HttpHeaders.AUTHORIZATION, required = false) String authorization) {
         // Que les utilisateurs authentifiés
@@ -27,6 +28,7 @@ public class IndexController {
             // TODO : verifier header
             System.out.println(authorization);
         }
+        return null;
     }
 
 
