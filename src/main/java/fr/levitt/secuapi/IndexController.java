@@ -1,7 +1,11 @@
 package fr.levitt.secuapi;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.levitt.secuapi.core.Utilisateur;
@@ -12,6 +16,18 @@ public class IndexController {
 
     @Autowired
     private UtilisateurRepository utilisateurRepository;
+
+    @GetMapping("/secure")
+    public ResponseEntity secure(@RequestHeader(value=HttpHeaders.AUTHORIZATION, required = false) String authorization) {
+        // Que les utilisateurs authentifiés
+        if (authorization == null) {
+            return new ResponseEntity<>("Hello World!", HttpStatus.UNAUTHORIZED);
+        }
+        else {
+            // TODO : verifier header
+            System.out.println(authorization);
+        }
+    }
 
 
     @GetMapping("/newUser")
